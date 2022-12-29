@@ -22,3 +22,4 @@ else
 	echo "El directorio no existe o no es un directorio"
 fi
 
+ ls -lR $1 | grep "^d" | wc -l
