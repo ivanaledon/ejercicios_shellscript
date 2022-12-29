@@ -13,14 +13,20 @@ if [[ $# -le 5 && $# -ge 4 ]]; then
 			nombre $2 $3 $4
 			if [ $# -eq 5 ];then
 				addgroup $5
-				useradd -G $5 $usu
+				useradd -m -s /bin/bash $usu -g $5
 			else
 				useradd $usu
 			fi
 		;;
 		baja)
 			nombre $2 $3 $4
-			userdel $usu
+                        if [ $# -eq 5 ];then
+                                userdel $usu
+				delgroup $5
+				rm -rf /home/$usu
+                        else
+                                userdel $usu
+			fi
 		;;
 		*)
 			echo "Parametro introducido incorrecto, escriba "alta" o "baja""
