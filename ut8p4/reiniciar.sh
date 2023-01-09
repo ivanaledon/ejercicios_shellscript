@@ -1,4 +1,6 @@
 #!/bin/bash
 
-sleep 300 > /dev/null 2>&1 &
+{
+sleep 300
 reboot
+} & 
