@@ -40,6 +40,6 @@ if [ $# -eq 0 ];then
 	reiniciar
 
 elif [ $# -eq 1 ];then
-	reb=$1
+	min=$1
 	reiniciar
 fi
